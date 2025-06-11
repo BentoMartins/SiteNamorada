@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para o Amor da Minha Vida, Milena ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Feliz Dia dos Namorados, meu amor! ❤️</h1>
+
+    <div class="audio-box">
+      <button id="playBtn">▶ Tocar Música</button>
+      <audio id="musica" loop>
+        <source src="musica.mpga" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div class="presente">
+      <button id="btnPresente">🎁 Clique para abrir seu presente</button>
+      <div id="mensagem" class="mensagem escondido">
+        <p>
+          Hoje é um daqueles dias especiais em que eu agradeço por ter tido a sorte de 
+          ter te visto naquela festa, com aquela roupa, aquele cabelo, aqueles olhos 
+          gigantes, aquela boca gostosa, e aquele sorriso lindo. Obrigado por me mostrar
+          o quão leve pode ser o ato de amar, você tem o superpoder de conseguir deixar tudo mais feliz. Obrigado por 
+          me permitir caminhar ao seu lado, por me ensinar tanto sobre o amor e por ser a razão dos meus sorrisos 
+          mais verdadeiros. Você chegou na minha vida tão rápido, e apesar da sua rápida vinda, você trouxe cor 
+          para os meus dias cinzentos, melodias para o meu silêncio, e uma paz que eu jamais imaginaria. Encontrar você 
+          foi como encontrar o meu lugar no mundo, um lugar aonde minha alma possa descansar e ser feliz. apesar 
+          da sua vinda ter sido rápida, eu espero nunca ter de me despedir de você. Feliz dia dos namorados meu amor. 💖
+        </p>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <div class="foto"><img src="foto1.jpeg" /></div>
+      <div class="foto"><img src="foto2.jpeg" /></div>
+      <div class="foto"><img src="foto3.jpeg" /></div>
+      <div class="foto"><img src="foto4.jpeg" /></div>
+    </div>
+  </div>
+
+  <script>
+    const playBtn = document.getElementById('playBtn');
+    const audio = document.getElementById('musica');
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸ Pausar Música';
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶ Tocar Música';
+      }
+    });
+
+    const btnPresente = document.getElementById('btnPresente');
+    const mensagem = document.getElementById('mensagem');
+    btnPresente.addEventListener('click', () => {
+      mensagem.classList.toggle('escondido');
+    });
+
+    const coracoes = ['❤️','💖','💘','💕','💞','💗'];
+    function criarCoracao() {
+      const coracao = document.createElement('div');
+      coracao.classList.add('emoji-coração');
+      coracao.textContent = coracoes[Math.floor(Math.random() * coracoes.length)];
+      coracao.style.left = Math.random() * 100 + 'vw';
+      coracao.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(coracao);
+      setTimeout(() => coracao.remove(), 6000);
+    }
+    setInterval(criarCoracao, 300);
+  </script>
+  <div class="video-box">
+  <h2>A minha visão favorita 💞</h2>
+  <video controls poster="capa-video.jpg">
+    <source src="video.mp4" type="video/mp4" />
+  </video>
+</div>
+<div class="galeria">
+  <!-- suas fotos -->
+</div>
+
+<div class="contador-box">
+  <h2>Eu te amo desde:</h2>
+  <div id="contador" class="piscando brilhante"></div>
+
+</div>
+<script>
+  function atualizarContador() {
+    const dataInicio = new Date("2024-11-28T00:00:00");
+    const agora = new Date();
+    const diferenca = agora - dataInicio;
+
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+    const segundos = Math.floor((diferenca / 1000) % 60);
+
+    document.getElementById("contador").textContent =
+      `${dias} dias, ${horas}h ${minutos}min ${segundos}s`;
+  }
+
+  setInterval(atualizarContador, 1000);
+</script>
+
+</body>
+</html>

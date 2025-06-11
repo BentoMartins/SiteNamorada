@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff0f6;
+  color: #000;
+  overflow-x: hidden;
+  animation: fadeIn 1.5s ease-in;
+  position: relative;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 2rem 5rem; /* era: 5rem 2rem 10rem */
+  text-align: center;
+}
+.titulo {
+  font-size: 2.5rem;
+  margin: 2rem 0 3rem; /* era: 3rem 0 5rem */
+  animation: zoomIn 1s ease;
+  color: #e60039;
+}
+.titulo {
+  font-family: 'Candy Beans', cursive;
+}
+.audio-box {
+  margin-bottom: 4rem;
+}
+button {
+  background-color: #ff4d88;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+  background-color: #e60039;
+}
+.mensagem {
+  margin-top: 2rem;
+  background-color: #ffe6f0;
+  border: 2px dashed #e60039;
+  padding: 1.5rem;
+  border-radius: 15px;
+  animation: slideIn 1s ease forwards;
+  transition: transform 0.3s ease;
+}
+.mensagem:hover {
+  transform: scale(1.03);
+}
+.escondido {
+  display: none;
+}
+.galeria {
+  margin-top: 3rem; /* era: 8rem */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* opcional: menor espaço entre fotos */
+  justify-content: center;
+  padding-bottom: 50vh; /* era: 100vh */
+}
+.foto {
+  position: relative;
+  width: 300px; /* antes 250px: aumenta o tamanho das fotos */
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.foto:hover {
+  transform: scale(1.08);
+}
+.foto img {
+  width: 100%;
+  border: 3px solid #e60039;
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  transition: transform 0.2s;
+  box-shadow: 4px 4px 10px rgba(230, 0, 57, 0.3);
+}
+.foto img:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+.foto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80px;
+  height: 30px;
+  background: url('nota-de-papel-amarelo-com-fita-adesiva-isolada-no-branco_41775-713.avif') no-repeat center;
+  background-size: cover;
+  transform: translateX(-50%);
+}
+.emoji-coração {
+  position: fixed;
+  top: -2rem;
+  font-size: 2rem;
+  animation: cair linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.8;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes cair {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+@font-face {
+  font-family: 'Candy Beans';
+  src: url('fonts/CandyBeans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.contador-box {
+  margin-top: 2rem; /* era: 4rem */
+  text-align: center;
+  font-size: 1.6rem;
+  color: #e60039;
+  animation: fadeIn 1s ease;
+}
+#contador {
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.brilhante {
+  border: 4px solid #ff4d88;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: #fff0f6;
+  display: inline-block;
+  animation: brilhar 3s infinite alternate;
+}
+
+@keyframes brilhar {
+  0% {
+    box-shadow: 0 0 10px #ff4d88, 0 0 20px #ff4d88;
+    border-color: #ff4d88;
+  }
+  33% {
+    box-shadow: 0 0 10px #c400ff, 0 0 25px #c400ff;
+    border-color: #c400ff;
+  }
+  66% {
+    box-shadow: 0 0 15px #e60039, 0 0 30px #e60039;
+    border-color: #e60039;
+  }
+  100% {
+    box-shadow: 0 0 20px #ff4d88, 0 0 35px #ff4d88;
+    border-color: #ff4d88;
+  }
+}
+.video-box {
+  margin-top: 2rem; /* era: 5rem */
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+.video-box h2 {
+  color: #e60039;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Candy Beans', cursive;
+}
+
+.video-box video {
+  width: 90%;
+  max-width: 800px;
+  border: 4px solid #ff4d88;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 77, 136, 0.5);
+}
+
+
+
+
+
